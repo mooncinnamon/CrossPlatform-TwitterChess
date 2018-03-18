@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Twitter Chess</string>
+    <string name="preference_file_key">Twitter Info</string>
+</resources>
