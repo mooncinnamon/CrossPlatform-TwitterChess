@@ -12,13 +12,13 @@ android {
     }
     buildTypes {
         debug{
-            buildConfigField("String","CONSUMER_KEY",'"yiUiM4aRyLwyDn8k7AveMvNFg"')
-            buildConfigField("String","CONSUMER_SECRET",'"QYVNcfrGQ5tIAgc1ObD4azoLSl4uy8H4a2FJ9N6mtIMp4XAbWV"')
+            buildConfigField("String","CONSUMER_KEY",'"WSHglu8IqPeZvviY9YVAfLrVJ"')
+            buildConfigField("String","CONSUMER_SECRET",'"UXAOBoeH3vOhM4X0kxQJxJlFJSUqs3gM3rWbUHJBIDdcWx9czK"')
         }
 
         release {
-            buildConfigField("String","CONSUMER_KEY","yiUiM4aRyLwyDn8k7AveMvNFg")
-            buildConfigField("String","CONSUMER_SECRET","QYVNcfrGQ5tIAgc1ObD4azoLSl4uy8H4a2FJ9N6mtIMp4XAbWV")
+            buildConfigField("String","CONSUMER_KEY","WSHglu8IqPeZvviY9YVAfLrVJ")
+            buildConfigField("String","CONSUMER_SECRET","UXAOBoeH3vOhM4X0kxQJxJlFJSUqs3gM3rWbUHJBIDdcWx9czK")
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
