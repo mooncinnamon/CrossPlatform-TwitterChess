@@ -17,11 +17,14 @@ public class AccessTokenAsync extends AsyncTask<Object, AccessToken, AccessToken
     @Override
     protected AccessToken doInBackground(Object... objects) {
         try {
-            Twitter twitter = (Twitter) objects[0];
-            RequestToken requestToken = (RequestToken)objects[1];
-            String pincode = (String)objects[3];
-
-            accessToken = twitter.getOAuthAccessToken(requestToken, pincode);
+            if (objects.length == 3) {
+                Twitter twitter = (Twitter) objects[0];
+                RequestToken requestToken = (RequestToken) objects[1];
+                String pincode = (String) objects[2];
+                accessToken = twitter.getOAuthAccessToken(requestToken, pincode);
+            }else if (objects.length == 2){
+                accessToken = new AccessToken(objects[0].toString(), objects[1].toString());
+            }
         }catch (Exception ex){
             ex.printStackTrace();
         }

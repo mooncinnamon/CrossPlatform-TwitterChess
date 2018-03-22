@@ -27,8 +27,9 @@ public class GetPincodeScript {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    Log.d("twitter-chess", "pin : "+ pin);
-                    editText.setText(pin);
+                    String pincode = pin.split("<code>")[1].substring(0,7);
+                    Log.d("twitter-chess", "pin : "+ pincode);
+                    editText.setText(pincode);
                 }
             });
         } else {
