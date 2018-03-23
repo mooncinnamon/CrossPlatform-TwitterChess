@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import com.cinnamon.moon.twitterchess.Ouath.AccessTokenAsync;
 import com.cinnamon.moon.twitterchess.Ouath.RequestTokenAsync;
 import com.cinnamon.moon.twitterchess.SharedPreferences.SharedMaster;
+import com.cinnamon.moon.twitterchess.TwitterFunction.MentionStream;
 
 import java.util.concurrent.ExecutionException;
 
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         TwitterStreamFactory twitterStreamFactory = new TwitterStreamFactory(getConfigurationBuilder().build());
         twitter = twitterFactory.getInstance();
         twitterStream = twitterStreamFactory.getInstance();
+
+        MentionStream stream = new MentionStream()
         try {
             if (sharedMaster.getSharedPref("oauth-login", false)) {
                 String accessToken_key = sharedMaster.getSharedPref("accessToken", "");
@@ -49,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("twitter-chess", "accesstoken : " + accessToken_key + " accessSecret : " + accessTokenSecret_key);
 
                 AccessTokenAsync tokenAsync = new AccessTokenAsync();
+
                 AccessToken accessToken = tokenAsync.execute(accessToken_key, accessTokenSecret_key).get();
-
-
                 twitter.setOAuthAccessToken(accessToken);
                 twitterStream.setOAuthAccessToken(accessToken);
+
+
             } else {
                 getLogin();
             }
